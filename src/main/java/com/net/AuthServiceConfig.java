@@ -1,4 +1,4 @@
-package com;
+package com.net;
 
 public class AuthServiceConfig
 {

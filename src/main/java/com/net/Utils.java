@@ -1,5 +1,6 @@
-package com;
+package com.net;
 
+import com.Const;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.fluent.Executor;

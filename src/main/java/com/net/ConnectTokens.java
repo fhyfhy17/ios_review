@@ -1,4 +1,4 @@
-package com;
+package com.net;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

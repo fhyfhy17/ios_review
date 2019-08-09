@@ -1,4 +1,4 @@
-package com;
+package com.dingding;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dingding.SendResult;

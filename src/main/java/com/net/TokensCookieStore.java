@@ -1,4 +1,4 @@
-package com;
+package com.net;
 
 import org.apache.http.client.CookieStore;
 import org.apache.http.cookie.Cookie;
