@@ -25,7 +25,7 @@ public class Main
 			log.info("",e);
 		}
 		ScheduledExecutorService service=Executors.newSingleThreadScheduledExecutor();
-
+		
 		service.scheduleWithFixedDelay(iosReview::queryReview,0,20,TimeUnit.SECONDS);
 	
 	}

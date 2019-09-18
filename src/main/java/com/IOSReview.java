@@ -86,7 +86,7 @@ public class IOSReview
                 Context context=((JSONObject)review).getObject("value",Context.class);
                 if(!all.contains(String.valueOf(context.getId()))){
                     log.info("发送到钉钉  context ={}",context);
-                    SendTextMessage.sendWithAtAll(context.getNickname()
+                    SendTextMessage.sendWithAtAllAsync(context.getNickname()
                             +"\n"+context.getStoreFront()
                             +"\n"+context.getReview()
                     
@@ -119,7 +119,7 @@ public class IOSReview
                 pw.close();
                 fw.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("",e);
             }
     }
     

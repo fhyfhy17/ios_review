@@ -64,8 +64,22 @@ public class SendTextMessage {
         }
         return sendResult;
     }
-
-
-
-
+    
+    
+    
+    /**
+     * 发送文本消息 并@所有人
+     *
+     * @param message
+     * @return
+     */
+    public static void sendWithAtAllAsync(String message) {
+        TextMessage textMessage = new TextMessage(message);
+        textMessage.setIsAtAll(true);
+        try {
+            robot.sendAsync(WEBHOOK_TOKEN, textMessage);
+        } catch (Exception e) {
+            log.error("===> send robot message atAll error:",e);
+        }
+    }
 }
