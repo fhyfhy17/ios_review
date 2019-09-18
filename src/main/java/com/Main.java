@@ -26,7 +26,7 @@ public class Main
 		}
 		ScheduledExecutorService service=Executors.newSingleThreadScheduledExecutor();
 		
-		service.scheduleWithFixedDelay(iosReview::queryReview,0,20,TimeUnit.SECONDS);
+		service.scheduleWithFixedDelay(iosReview::queryReview,0,20,TimeUnit.MINUTES);
 	
 	}
 }
