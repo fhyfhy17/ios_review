@@ -1,0 +1,9 @@
+com\dingding\TextMessage.class
+com\dingding\SendTextMessage.class
+com\net\SigninRequest.class
+com\net\AuthServiceConfig.class
+com\dingding\SendResult.class
+com\dingding\RobotClient.class
+com\net\ConnectTokens.class
+com\net\Utils.class
+com\net\TokensCookieStore.class

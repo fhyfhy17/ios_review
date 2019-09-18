@@ -49,6 +49,7 @@ public class IOSReview
         this.olympusUrl = olympusUrl;
     }
     public void queryReview(){
+        log.info("进行查询");
         Response response=null;
         try
         {
@@ -56,13 +57,13 @@ public class IOSReview
         }
         catch(IOException e)
         {
-            e.printStackTrace();
+            log.error("查询报错 ",e);
         }
     
         try
         {
             String s=response.returnContent().asString();
-            
+            log.info("请求，返回信息 {}",s);
             if(s.contains("Unauthenticated")){
                 try
                 {
@@ -76,6 +77,7 @@ public class IOSReview
             }
     
             JSONObject jsonObject1=JSONObject.parseObject(s);
+            log.info("转成json  = {}",jsonObject1.toJSONString());
             JSONObject data1=jsonObject1.getJSONObject("data");
             JSONArray reviews=data1.getJSONArray("reviews");
             List<String> all=getAll();
@@ -83,7 +85,7 @@ public class IOSReview
             {
                 Context context=((JSONObject)review).getObject("value",Context.class);
                 if(!all.contains(String.valueOf(context.getId()))){
-                    
+                    log.info("发送到钉钉  context ={}",context);
                     SendTextMessage.sendWithAtAll(context.getNickname()
                             +"\n"+context.getStoreFront()
                             +"\n"+context.getReview()
@@ -161,6 +163,7 @@ public class IOSReview
     private void connect(Executor executor, String login, String password) throws IOException, URISyntaxException {
         final AuthServiceConfig config = getConfig(executor);
         signin(executor, config.getAuthServiceUrl(), config.getAuthServiceKey(), login, password);
+        log.info("sigin 完成");
         session(executor);
     }
 
